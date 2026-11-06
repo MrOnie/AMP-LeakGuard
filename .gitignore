@@ -14,6 +14,15 @@ build/
 *.dylib
 *.dll
 
+# Archives
+*.zip
+*.tar
+*.gz
+*.rar
+
+# Manuscript & Publication drafts
+manuscript/
+
 # Models & Large Checkpoints
 models/
 *.joblib

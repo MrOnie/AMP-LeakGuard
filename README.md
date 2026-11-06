@@ -8,7 +8,6 @@
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Tests: Passing](https://img.shields.io/badge/tests-5%2F5%20passed-brightgreen.svg)]()
 [![GitHub Repo](https://img.shields.io/badge/GitHub-MrOnie%2FAMP--LeakGuard-181717.svg?logo=github&logoColor=white)](https://github.com/MrOnie/AMP-LeakGuard)
-[![Overleaf Ready](https://img.shields.io/badge/Overleaf-1--Click%20Ready-47A141.svg?logo=overleaf&logoColor=white)](#-overleaf-manuscript-compilation)
 
 </div>
 
@@ -28,11 +27,11 @@ AMP-LeakGuard provides end-to-end tooling to curate non-redundant datasets, synt
 ## 🔬 Scientific Workflow
 
 <div align="center">
-  <img src="manuscript/figures/fig1_pipeline.png" alt="AMP-LeakGuard Pipeline Architecture" width="95%"/>
+  <img src="reports/figures/fig1_pipeline.png" alt="AMP-LeakGuard Pipeline Architecture" width="95%"/>
   <p><em>Figure 1: Modular architecture of the AMP-LeakGuard benchmarking and de-biasing framework.</em></p>
 </div>
 
-The complete methodology is formally outlined in Mermaid format in [`manuscript/fig1_pipeline.mmd`](manuscript/fig1_pipeline.mmd).
+The complete methodology is formally outlined in Mermaid format in [`reports/fig1_pipeline.mmd`](reports/fig1_pipeline.mmd).
 
 ---
 
@@ -60,8 +59,8 @@ Using **1,026 manually curated Swiss-Prot mature AMPs** ($10 \le L \le 50$ aa) a
       <td align="center"><b>Scheme B: Physicochemically Matched Sampling</b></td>
     </tr>
     <tr>
-      <td><img src="manuscript/figures/fig3_shap_scheme_a_naive.png" width="450px"/></td>
-      <td><img src="manuscript/figures/fig3_shap_scheme_b_matched.png" width="450px"/></td>
+      <td><img src="reports/figures/fig3_shap_scheme_a_naive.png" width="450px"/></td>
+      <td><img src="reports/figures/fig3_shap_scheme_b_matched.png" width="450px"/></td>
     </tr>
   </table>
   <p><em>Figure 2: SHAP feature attribution beeswarm plots demonstrating how neutralizing net charge forces models to learn genuine bacterial membrane disruption motifs.</em></p>
@@ -79,18 +78,6 @@ Using **1,026 manually curated Swiss-Prot mature AMPs** ($10 \le L \le 50$ aa) a
 
 ```tree
 AMP-LeakGuard/
-├── manuscript/                          # Publication-ready LaTeX package
-│   ├── main.tex                         # Full manuscript source for Overleaf
-│   ├── references.bib                   # 31 verified BibTeX references with real DOIs
-│   ├── fig1_pipeline.mmd                # Standalone Mermaid diagram source
-│   └── figures/                         # 300 DPI publication figures
-│       ├── fig1_pipeline.png            # Visual architecture workflow
-│       ├── fig1_performance_gap.png     # Degradation barplots (AUPRC and MCC)
-│       ├── fig2_roc_prc_scheme_a_naive.png
-│       ├── fig2_roc_prc_scheme_b_matched.png
-│       ├── fig3_shap_scheme_a_naive.png
-│       └── fig3_shap_scheme_b_matched.png
-├── manuscript_overleaf.zip              # 1-Click ZIP upload for Overleaf
 ├── src/                                 # Modular Python package
 │   ├── data/
 │   │   ├── curation.py                  # Sequence QC, canonical alphabet, length filtering
@@ -109,11 +96,15 @@ AMP-LeakGuard/
 ├── data/
 │   ├── raw/                             # Downloaded Swiss-Prot dumps (TSV)
 │   └── processed/                       # Curated datasets and benchmark tables (CSV, MD)
+├── reports/
+│   ├── fig1_pipeline.mmd                # Standalone Mermaid diagram source
+│   └── figures/                         # High-resolution benchmark figures (300 DPI)
 ├── config/
 │   └── params.yaml                      # Centralized configuration parameters
 ├── tests/
 │   └── test_curation.py                 # Unit test suite (unittest)
 ├── pyproject.toml                       # Python package configuration
+├── LICENSE                              # MIT License
 └── README.md                            # Project documentation
 ```
 
@@ -174,26 +165,13 @@ python src/run_large_scale.py
 ```
 *Outputs:*
 * Results Table: `data/processed/large_scale_benchmark_audit.csv` and `.md`
-* Figures generated at 300 DPI in `reports/figures/` and `manuscript/figures/`
+* Figures generated at 300 DPI in `reports/figures/`
 
 ### Step 4: Re-render Figure 1 Workflow
 Generate the vector-grade schematic for Figure 1:
 ```bash
 python src/visualization/render_pipeline_figure.py
 ```
-
----
-
-## 📄 Overleaf Manuscript Compilation
-
-The complete academic manuscript is formatted in standard LaTeX matching publication guidelines for *Briefings in Bioinformatics*, *Journal of Chemical Information and Modeling (JCIM)*, and *Bioinformatics*.
-
-### 1-Click Upload to Overleaf:
-1. Locate the file **[`manuscript_overleaf.zip`](manuscript_overleaf.zip)** in this repository.
-2. Go to [Overleaf](https://www.overleaf.com/).
-3. Click **New Project** $\to$ **Upload Project**.
-4. Select `manuscript_overleaf.zip`.
-5. Click **Recompile** (compatible out-of-the-box with pdfLaTeX, XeLaTeX, and LuaLaTeX).
 
 ---
 
@@ -226,6 +204,8 @@ If you use **AMP-LeakGuard** in your research, please cite:
 * **Data Leakage in Bio-ML:** Bernett et al. (2024), *Nature Methods*, [DOI: 10.1038/s41592-024-02362-y](https://doi.org/10.1038/s41592-024-02362-y).
 * **Negative Sampling Bias in AMPs:** Sidorczuk et al. (2022), *Briefings in Bioinformatics*, [DOI: 10.1093/bib/bbac343](https://doi.org/10.1093/bib/bbac343).
 * **Evaluation Standards in Peptide DBs:** Pintor et al. (2026), *Journal of Chemical Information and Modeling*, [DOI: 10.1021/acs.jcim.6c02141](https://doi.org/10.1021/acs.jcim.6c02141).
+* **DOME Recommendations:** Walsh et al. (2021), *Nature Methods*, [DOI: 10.1038/s41592-021-01205-4](https://doi.org/10.1038/s41592-021-01205-4).
+* **Shortcut Learning in Deep Neural Networks:** Geirhos et al. (2020), *Nature Machine Intelligence*, [DOI: 10.1038/s42256-020-00257-z](https://doi.org/10.1038/s42256-020-00257-z).
 * **Peptide Physicochemical Scales:** Eisenberg et al. (1984), *J. Mol. Biol.*, [DOI: 10.1016/0022-2836(84)90509-9](https://doi.org/10.1016/0022-2836(84)90509-9).
 * **Explainable AI:** Lundberg & Lee (2017), *NeurIPS*, [arXiv: 1705.07874](https://doi.org/10.48550/arXiv.1705.07874).
 
