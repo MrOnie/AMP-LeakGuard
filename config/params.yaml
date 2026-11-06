@@ -1,0 +1,41 @@
+project:
+  name: "AMP-LeakGuard"
+  version: "1.0.0"
+  random_seed: 42
+
+curation:
+  min_length: 10
+  max_length: 50
+  allowed_amino_acids: "ACDEFGHIKLMNPQRSTVWY"
+  remove_duplicates: true
+  positive_max_mic_ug_ml: 32.0   # Actividad antimicrobiana confirmada
+  negative_min_mic_ug_ml: 128.0  # Inactivos confirmados
+
+negative_sampling:
+  ratio: 1.0                     # 1:1 ratio positivos/negativos
+  schemes:
+    - "uniprot_naive"            # Esquema A: Fragmentos aleatorios de UniProt
+    - "uniprot_physicochemical"  # Esquema B: Pareados en longitud y carga neta
+    - "experimental_inactive"    # Esquema C: Péptidos inactivos validados
+
+homology_clustering:
+  engine: "mmseqs2"
+  identity_thresholds:
+    - 0.70
+    - 0.50
+    - 0.40
+    - 0.30
+  coverage: 0.80
+
+model_training:
+  cv_folds: 5
+  models:
+    - "logistic_regression"
+    - "random_forest"
+    - "lightgbm"
+  metrics:
+    - "auroc"
+    - "auprc"
+    - "mcc"
+    - "f1_score"
+    - "brier_score"

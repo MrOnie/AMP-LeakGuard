@@ -1,0 +1,44 @@
+# Python & Virtual Environments
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dylib
+*.dll
+
+# Models & Large Checkpoints
+models/
+*.joblib
+*.pth
+*.pt
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary / Scratch files
+scratch/
+tmp/
+*.log
+
+# Internal working notes
+01_auditoria_fuga_datos_peptidos_bioactivos.md
+AUDITORIA_METODOLOGICA_Y_REVISION_CRITICA.md

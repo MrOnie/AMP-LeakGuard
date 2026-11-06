@@ -1,0 +1,5 @@
+Negative Scheme,Model,Random AUPRC,Homology AUPRC,Delta AUPRC (Leakage),p-val AUPRC (Paired),Random AUROC,Homology AUROC,Delta AUROC,Random MCC,Homology MCC,Delta MCC,p-val MCC (Paired)
+Scheme A (Naive),random_forest,0.9536,0.9432,0.0104,0.3699,0.9382,0.9259,0.0123,0.7718,0.7334,0.0384,0.2240
+Scheme A (Naive),lightgbm,0.9557,0.9449,0.0108,0.3333,0.9424,0.9287,0.0137,0.7752,0.7324,0.0428,0.2975
+Scheme B (Matched),random_forest,0.9571,0.9448,0.0123,0.2585,0.9462,0.9316,0.0146,0.7746,0.7314,0.0432,0.2470
+Scheme B (Matched),lightgbm,0.9521,0.9413,0.0108,0.3582,0.9434,0.9284,0.0149,0.7701,0.7174,0.0527,0.1789
