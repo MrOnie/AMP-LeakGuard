@@ -222,7 +222,7 @@ If you use **AMP-LeakGuard** in your research, please cite:
 * **Evaluation Standards in Peptide DBs:** Pintor et al. (2026), *Journal of Chemical Information and Modeling*, [DOI: 10.1021/acs.jcim.6c02141](https://doi.org/10.1021/acs.jcim.6c02141).
 * **DOME Recommendations:** Walsh et al. (2021), *Nature Methods*, [DOI: 10.1038/s41592-021-01205-4](https://doi.org/10.1038/s41592-021-01205-4).
 * **Shortcut Learning in Deep Neural Networks:** Geirhos et al. (2020), *Nature Machine Intelligence*, [DOI: 10.1038/s42256-020-00257-z](https://doi.org/10.1038/s42256-020-00257-z).
-* **Peptide Physicochemical Scales:** Eisenberg et al. (1984), *J. Mol. Biol.*, [DOI: 10.1016/0022-2836(84)90509-9](https://doi.org/10.1016/0022-2836(84)90509-9).
+* **Peptide Physicochemical Scales:** Eisenberg et al. (1984), *J. Mol. Biol.*, [DOI: 10.1016/0022-2836(84)90309-7](https://doi.org/10.1016/0022-2836(84)90309-7).
 * **Explainable AI:** Lundberg & Lee (2017), *NeurIPS*, [arXiv: 1705.07874](https://doi.org/10.48550/arXiv.1705.07874).
 
 ---
