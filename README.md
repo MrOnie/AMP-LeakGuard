@@ -118,25 +118,41 @@ AMP-LeakGuard/
 
 ### 2. Environment Setup
 
+Clone the repository:
 ```bash
-# Clone the repository
 git clone https://github.com/MrOnie/AMP-LeakGuard.git
 cd AMP-LeakGuard
+```
 
-# Create and activate virtual environment with uv
-uv venv .venv
-# On Windows:
+#### Option A: Using `uv` (Recommended, ~10x faster)
+```bash
+# Create virtual environment (specify CPython version if you have multiple Pythons installed, e.g. MSYS2/C++)
+uv venv .venv --python 3.11
+
+# Activate virtual environment
+# On Windows (cmd/PowerShell):
 .venv\Scripts\activate
 # On Linux/macOS:
 source .venv/bin/activate
 
-# Install dependencies
-uv pip install -e .
+# Install dependencies in editable mode
+# Note: --link-mode copy ensures compatibility across filesystems and cloud-synced folders (OneDrive, etc.)
+uv pip install --link-mode copy -e .
 ```
 
-Alternatively, using standard `pip`:
+#### Option B: Using standard Python `venv` and `pip`
 ```bash
-pip install -e .
+# Create virtual environment with Python's standard library
+python -m venv .venv
+
+# Activate virtual environment
+# On Windows (cmd/PowerShell):
+.venv\Scripts\activate
+# On Linux/macOS:
+source .venv/bin/activate
+
+# Install dependencies in editable mode using module invocation
+python -m pip install -e .
 ```
 
 ---
