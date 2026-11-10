@@ -20,6 +20,9 @@ build/
 *.gz
 *.rar
 
+# Manuscript & Publication drafts
+manuscript/
+
 # Models & Large Checkpoints
 models/
 *.joblib
@@ -48,3 +51,4 @@ tmp/
 # Internal working notes
 01_auditoria_fuga_datos_peptidos_bioactivos.md
 AUDITORIA_METODOLOGICA_Y_REVISION_CRITICA.md
+/manuscript
