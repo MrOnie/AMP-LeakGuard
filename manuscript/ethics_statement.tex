@@ -1,0 +1,59 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{charter}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+\title{\textbf{Ethics and Compliance Statement}}
+\author{\textbf{Ronie Martínez}}
+\date{November 6, 2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Manuscript Details}
+\textbf{Title:} Rigorous Benchmarking and De-Biasing of Machine Learning Predictors for Antimicrobial Peptides: Resolving Homology Leakage and Negative Sampling Artifacts\\
+\textbf{Corresponding Author:} Ronie Martínez (\texttt{ronie.martinez@epn.edu.ec})\\
+\textbf{Affiliation:} Departamento de Informática y Ciencias de la Computación, Escuela Politécnica Nacional, Quito, Ecuador
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\section*{Ethical Approval and Research Compliance}
+
+\subsection*{1. Human Participants and Patient Data}
+This study \textbf{did not involve human participants, clinical trials, medical interventions, or identifiable human tissues/specimens}. Consequently, institutional ethical review and formal informed consent procedures were \textbf{not required (exempt)} in accordance with the Declaration of Helsinki and international guidelines for computational biology research. The non-antimicrobial background sequences used for negative benchmarking were retrieved programmatically from the publicly accessible, anonymized, and reviewed UniProtKB/Swiss-Prot database (canonical proteome of \textit{Homo sapiens}).
+
+\subsection*{2. Animal Subjects and Welfare}
+This research \textbf{did not involve experimental work with live vertebrate or invertebrate animal subjects}. No animals were bred, handled, housed, or sacrificed for the purpose of this study. All primary peptide sequence records analyzed herein were curated programmatically from open-access scientific repositories (UniProtKB/Swiss-Prot release 2024\_02). Formal approval from an Institutional Animal Care and Use Committee (IACUC) was therefore not applicable.
+
+\subsection*{3. Biosecurity and Dual-Use Research of Concern (DURC)}
+The computational methods and algorithms introduced in this work (\texttt{AMP-LeakGuard}) are designed strictly for \textbf{benchmarking data leakage, evaluating negative sampling bias, and enhancing the statistical rigor of predictive models in bioinformatics}. 
+\begin{itemize}
+    \item The study does \textbf{not} provide protocols or instructions for the genetic engineering, de novo synthesis, or weaponization of harmful biological agents, Select Agents, or high-consequence pathogens.
+    \item During dataset curation, known toxins (\texttt{KW-0800}) and harmful venoms were explicitly filtered out and excluded from the experimental design.
+    \item The primary objective of this research is defensive and therapeutic: improving the computational discovery of narrow-spectrum antimicrobial agents against multi-drug resistant bacterial infections (AMR).
+\end{itemize}
+
+\subsection*{4. Data Integrity and Algorithmic Fairness}
+All datasets, data processing scripts, machine learning training procedures, and statistical evaluation pipelines are fully reproducible and released under the permissive open-source MIT License (\url{https://github.com/MrOnie/AMP-LeakGuard}). No private, proprietary, or restricted-access databases were used in this investigation.
+
+\vspace{1.0cm}
+
+\noindent\textbf{Ronie Martínez}\\
+Corresponding Author\\
+Departamento de Informática y Ciencias de la Computación\\
+Escuela Politécnica Nacional, Quito, Ecuador\\
+Email: \href{mailto:ronie.martinez@epn.edu.ec}{ronie.martinez@epn.edu.ec}
+
+\end{document}

@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{charter}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+\begin{document}
+
+\begin{letter}{
+To the Editor-in-Chief\\
+\textbf{Journal of Chemical Information and Modeling}\\
+American Chemical Society (ACS)
+}
+
+\address{
+\textbf{Ronie Martínez}\\
+Departamento de Informática y Ciencias de la Computación\\
+Escuela Politécnica Nacional\\
+Quito 170517, Ecuador\\
+Email: \href{mailto:ronie.martinez@epn.edu.ec}{ronie.martinez@epn.edu.ec}
+}
+
+\opening{Dear Editor-in-Chief,}
+
+I am pleased to submit our original research manuscript entitled:
+
+\begin{center}
+\large\textbf{``Rigorous Benchmarking and De-Biasing of Machine Learning Predictors for Antimicrobial Peptides: Resolving Homology Leakage and Negative Sampling Artifacts''}
+\end{center}
+
+for consideration for publication as a Full Research Article in the \textit{Journal of Chemical Information and Modeling}.
+
+\paragraph{Scientific Problem and Motivation:}
+Antimicrobial peptides (AMPs) represent vital candidates against antimicrobial resistance (AMR). Over the past decade, dozens of machine learning predictors have reported near-perfect discrimination ($\text{AUROC} > 0.96$). However, their real-world translational success in wet-lab experimental assays remains remarkably low ($\text{MIC} > 128\,\mu\text{g/mL}$). We demonstrate that this discrepancy is caused by two systemic flaws:
+\begin{enumerate}
+    \item \textbf{Homology-Driven Data Leakage:} Unconstrained random partitioning places homologous sequence variants into both training and validation sets, leading models to memorize family-specific sequence fragments rather than generalizable biophysical rules.
+    \item \textbf{Negative Sampling Bias (Electrostatic Shortcut Learning):} Because non-antimicrobial peptides are rarely deposited in biological databases, researchers routinely harvest random slices from eukaryotic proteomes. Because eukaryotic proteins are predominantly neutral or acidic, standard classifiers simply function as crude detectors of positive charge rather than learning true membrane-disruptive biophysics.
+\end{enumerate}
+
+\paragraph{Key Contributions:}
+To resolve these issues, we developed \textbf{AMP-LeakGuard}, an open-source benchmarking framework:
+\begin{itemize}
+    \item \textbf{Curated Non-Redundant Dataset:} 1,026 manually reviewed mature Swiss-Prot AMPs and 500 eukaryotic background proteins ($N = 2,052$ sequences per regime).
+    \item \textbf{Physicochemically Matched Sampling (Scheme B):} Background slices paired in sequence length and net charge ($|\Delta Z| \le 1.0$ at pH 7.0), neutralizing the electrostatic artifact.
+    \item \textbf{Leak-Free Homology Partitioning:} Single-linkage clustering at a 40\% sequence identity threshold via \texttt{StratifiedGroupKFold}, verified by global dynamic-programming alignment down to a mean cross-fold identity of only 16.1\%.
+    \item \textbf{Mechanistic Explainability via TreeExplainer SHAP:} When the charge artifact is neutralized, classifiers shift from trivial charge reliance (mean $|\text{SHAP}| = 0.5475$) to genuine determinants of bacterial membrane permeabilization: Arginine bidentate guanidinium bonding (0.8890), Cysteine disulfide bridges in defensins (0.7598), and amphipathic hydrophobic moment (0.7453).
+\end{itemize}
+
+\paragraph{Declarations and Open Science:}
+All code, curated datasets, and reproducible benchmarking pipelines are open-source under the MIT License on GitHub: \url{https://github.com/MrOnie/AMP-LeakGuard}. This manuscript is original, has not been published previously, and is not currently under consideration elsewhere. The author declares no competing financial or personal interests.
+
+\paragraph{Suggested Independent Reviewers:}
+\begin{enumerate}
+    \item \textbf{Dr. Katarzyna Sidorczuk} (University of Wrocław, Poland) -- \texttt{katarzyna.sidorczuk@uwr.edu.pl}
+    \item \textbf{Dr. Judith Bernett} (Technical University of Munich, Germany) -- \texttt{judith.bernett@tum.de}
+    \item \textbf{Dr. Célio Dias Santos-Júnior} (EMBL / Fudan University) -- \texttt{celio@embl.de}
+    \item \textbf{Dr. Michał Burdukiewicz} (Medical University of Białystok, Poland) -- \texttt{michalburdukiewicz@gmail.com}
+\end{enumerate}
+
+Thank you very much for your time and editorial consideration.
+
+\closing{Sincerely,}
+
+\vspace{0.5cm}
+\textbf{Ronie Martínez}\\
+Corresponding Author\\
+Escuela Politécnica Nacional, Quito, Ecuador\\
+Email: \texttt{ronie.martinez@epn.edu.ec}
+
+\end{letter}
+\end{document}
