@@ -23,8 +23,9 @@ build/
 # Manuscript & Publication drafts
 manuscript/
 
-# Models & Large Checkpoints
-models/
+# Models & Large Checkpoints (saved model binaries)
+/models/
+!src/models/
 *.joblib
 *.pth
 *.pt
